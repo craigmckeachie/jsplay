@@ -4,7 +4,9 @@
   "description": "JavaScript Playground",
   "main": "index.js",
   "scripts": {
-    "start": "npx babel src --watch --out-dir lib --"
+    "start": "run-p build program",
+    "program": "nodemon ./lib/program.js",
+    "build": "npx babel src --watch --out-dir lib --"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +15,9 @@
     "@babel/cli": "~7.11.6",
     "@babel/core": "~7.11.6",
     "@babel/plugin-proposal-class-properties": "~7.10.4",
-    "@babel/preset-env": "~7.11.5"
+    "@babel/preset-env": "~7.11.5",
+    "nodemon": "~2.0.4",
+    "npm-run-all": "~4.1.5"
   },
   "dependencies": {
     "@babel/polyfill": "~7.11.5",
